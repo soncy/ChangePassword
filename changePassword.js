@@ -14,6 +14,7 @@ var querystring = require('querystring');
 var cookie = require('./lib/cookieManager');
 var request = require('./lib/requestManager');
 
+var MAXCOUNT = 5;
 var passwordTemp = [];
 var userName = process.argv[2];
 var targetPassword = process.argv[3];
@@ -81,7 +82,7 @@ function visitChangePage() {
 function changePassword() {
     var userContext = cookie.get('UserContext');
     var oldPassword = currentPassword;
-    var newPassword = changeCount === 5 ? targetPassword : getNewPassword();
+    var newPassword = changeCount === MAXCOUNT ? targetPassword : getNewPassword();
     var params = '<params><canary>' + userContext + '</canary><oldPwd>'
         + oldPassword + '</oldPwd><newPwd>' + newPassword + '</newPwd></params>';
 
@@ -100,7 +101,7 @@ function changePassword() {
             changeCount ++;
             currentPassword = newPassword;
 
-            if (changeCount > 5) {
+            if (changeCount > MAXCOUNT) {
                 console.log('密码已经被改回：' + targetPassword);
                 process.exit();
             }
