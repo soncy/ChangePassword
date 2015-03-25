@@ -4,4 +4,4 @@
     git clone https://github.com/soncy/ChangePassword.git
 
 ## 使用
-    node changePassword.js 用户名 密码
+    node changePassword.js exchange-host(如mail.baidu.com) 用户名 密码
