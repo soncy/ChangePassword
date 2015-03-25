@@ -2,10 +2,9 @@
  * Created with WebStorm.
  * @author: song.chen
  * @date: 12/16/13 12:12 PM
- * @contact: song.chen@qunar.com
- * @fileoverview: 更改内网exchange密码
+ * @contact: soncy1986@gmail.com
+ * @fileoverview: 更改microsoft exchange密码
  */
-"use strict";
 
 var url = require('url');
 var https = require('https');
@@ -16,7 +15,8 @@ var request = require('./lib/requestManager');
 
 var MAXCOUNT = 5;
 var passwordTemp = [];
-var host = process.argv[2];
+var h = process.argv[2];
+var host = "http://" + h;
 var userName = process.argv[3];
 var targetPassword = process.argv[4];
 
@@ -53,7 +53,7 @@ function login() {
   };
 
   var headers = {
-    "Referer": host + '/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.corp.qunar.com%2fowa%2f',
+    "Referer": host + '/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2f' + h + '%2fowa%2f',
     "Host": url.parse(host).host,
     "Cookie": "PBack=0",
     "Content-Type": "application/x-www-form-urlencoded",
