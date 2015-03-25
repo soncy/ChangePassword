@@ -16,9 +16,10 @@ var request = require('./lib/requestManager');
 
 var MAXCOUNT = 5;
 var passwordTemp = [];
-var userName = process.argv[2];
-var targetPassword = process.argv[3];
-var host = 'https://mail.corp.qunar.com';
+var host = process.argv[2];
+var userName = process.argv[3];
+var targetPassword = process.argv[4];
+
 var charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"; // 字母表，用于生成随机密码
 var specialChar = '!@#$';
 var currentPassword = targetPassword;
