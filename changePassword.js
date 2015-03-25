@@ -1,6 +1,6 @@
 /*
  * Created with WebStorm.
- * @author: song.chen
+ * @author: soncy
  * @date: 12/16/13 12:12 PM
  * @contact: soncy1986@gmail.com
  * @fileoverview: 更改microsoft exchange密码
