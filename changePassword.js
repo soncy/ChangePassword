@@ -16,7 +16,7 @@ var request = require('./lib/requestManager');
 var MAXCOUNT = 5;
 var passwordTemp = [];
 var h = process.argv[2];
-var host = "http://" + h;
+var host = "https://" + h;
 var userName = process.argv[3];
 var targetPassword = process.argv[4];
 
