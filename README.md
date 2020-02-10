@@ -5,3 +5,5 @@
 
 ## 使用
     node changePassword.js exchange-host(如mail.baidu.com) 用户名 密码
+## node12+
+    node --tls-min-v1.0 changePassword.js exchange-host(如mail.baidu.com) 用户名 密码
